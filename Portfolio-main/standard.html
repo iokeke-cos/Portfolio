@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okeke Ijeamaka Grace - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="standard-view">
+
+   <audio id="music-track-a" loop src="music/Audio 2.mp3"></audio>
+   <audio id="music-track-b" loop src="music/Audio 1.mp3"></audio>
+   <div id="music-modal" class="modal-overlay">
+    <div class="modal-content">
+        <p id="music-modal-title">Choose Your Ambiance</p>
+        <div class="modal-choices">
+            <button id="music-a-btn" class="cta-button">Vibes A</button>
+            <button id="music-b-btn" class="cta-button">Vibes B</button>
+            <button id="music-none-btn" class="cta-button">Silence</button>
+        </div>
+    </div>
+</div>
+    <header class="header">
+        <nav class="navbar">
+            <a href="#hero" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#ai-videos" class="nav-link">Experience</a>
+            <a href="#illustrations" class="nav-link">Leadership</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <div class="header-right-controls">
+            <div class="header-controls">
+                
+                <a href="dev mode.html" id="switch-view-btn" class="control-btn" aria-label="Switch to Tech-View">
+                    <i class="fas fa-code"></i>
+                </a>
+
+                <div class="language-toggle-container">
+                    <button id="language-toggle-btn" class="control-btn" aria-label="Translate Page"><i class="fas fa-globe"></i></button>
+                    <div id="google_translate_element"></div>
+                </div>
+
+                <button id="theme-toggle-btn" class="control-btn" aria-label="Toggle Light/Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <button id="music-toggle-btn" class="control-btn" aria-label="Choose Ambiance">
+                    <i class="fas fa-music"></i>
+                </button>
+                
+                <button id="mute-btn" class="control-btn hidden" aria-label="Toggle Music">
+                    <i class="fas fa-volume-high"></i>
+                </button>
+
+            </div>
+        </div>
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Open menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <img src="images/standard1.jpg" class="hero-video-bg" alt="Abstract purple and blue background">
+            <div class="hero-content">
+                <h1><span class="notranslate">Okeke Ijeamaka Grace</span></h1>
+                <p>I'm <span id="typing-text"></span></p>
+                <div class="social-links-std">
+                    <a href="https://github.com/iokeke-cos" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ijeamaka-okeke-853119295" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:ijeamaka.okeke@pau.edu.ng" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <a href="#projects" class="cta-button">View My Work</a>
+                <a href="Okeke_Ijeamaka_CV.pdf" class="cta-button" download style="margin-left: 10px;">Download CV</a>
+            </div>
+        </section>
+
+        <section id="about" class="about-section animate-on-scroll">
+            <div class="container">
+                <h2>Who I Am</h2>
+                <div class="interactive-bio">
+                    <div class="bio-panel">
+                        <div class="panel-header">
+                            <h3><i class="fas fa-lightbulb"></i> About Me</h3>
+                            <i class="fas fa-chevron-down panel-icon"></i>
+                        </div>
+                        <div class="panel-content">
+                            <p>I'm a Software Engineering student at Pan-Atlantic University with an interest in software development, backend engineering, web development and mobile application development.</p>
+                        </div>
+                    </div>
+                    <div class="bio-panel">
+                        <div class="panel-header">
+                            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                            <i class="fas fa-chevron-down panel-icon"></i>
+                        </div>
+                        <div class="panel-content">
+                            <p><strong>Pan-Atlantic University</strong><br>B.Sc. Software Engineering<br>October 2023 – December 2027 (expected graduation)</p>
+                        </div>
+                    </div>
+                    <div class="bio-panel">
+                        <div class="panel-header">
+                            <h3><i class="fas fa-tools"></i> Skills</h3>
+                            <i class="fas fa-chevron-down panel-icon"></i>
+                        </div>
+                        <div class="panel-content">
+                            <div class="skills-grid" id="tech-stack-grid">
+                                <div class="skill-card"><i class="fab fa-python"></i><span>Python</span></div>
+                                <div class="skill-card"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
+                                <div class="skill-card"><i class="fas fa-code"></i><span>C++</span></div>
+                                <div class="skill-card"><i class="fab fa-rust"></i><span>Rust</span></div>
+                                <div class="skill-card"><i class="fas fa-mobile-screen"></i><span>React Native</span></div>
+                                <div class="skill-card"><i class="fas fa-bolt"></i><span>FastAPI</span></div>
+                                <div class="skill-card"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+                                <div class="skill-card"><i class="fab fa-react"></i><span>React</span></div>
+                                <div class="skill-card"><i class="fas fa-leaf"></i><span>MongoDB</span></div>
+                                <div class="skill-card"><i class="fas fa-database"></i><span>MySQL</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bio-panel">
+                        <div class="panel-header">
+                            <h3><i class="fas fa-handshake"></i> Strengths</h3>
+                            <i class="fas fa-chevron-down panel-icon"></i>
+                        </div>
+                        <div class="panel-content">
+                            <div class="skills-grid">
+                                <div class="skill-card"><i class="fas fa-brain"></i><span>Adaptability</span></div>
+                                <div class="skill-card"><i class="fas fa-people-group"></i><span>Leadership</span></div>
+                                <div class="skill-card"><i class="fas fa-users"></i><span>Team Management</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects" class="projects-section animate-on-scroll">
+            <div class="container">
+                <h2>My Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="https://placehold.co/600x400/2c3e50/f4f7f6?text=Tastybites" alt="Tastybites restaurant web application">
+                        <div class="project-content">
+                            <h3>Tastybites</h3>
+                            <p>A restaurant web application. The backend is built with FastAPI and the frontend with React.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/iokeke-cos/COS_202" class="project-link" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://placehold.co/600x400/2c3e50/f4f7f6?text=Task+Tracker" alt="Task Tracker website">
+                        <div class="project-content">
+                            <h3>Task Tracker</h3>
+                            <p>A task management website built with JavaScript.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/iokeke-cos/COS_202" class="project-link" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://placehold.co/600x400/2c3e50/f4f7f6?text=Crystal+Cleaners" alt="Crystal Cleaners cleaning services website">
+                        <div class="project-content">
+                            <h3>Crystal Cleaners</h3>
+                            <p>A cleaning services website built and deployed with a team. Backend: Node.js and MongoDB. Frontend: React, HTML and CSS. Payments: Paystack.</p>
+                            <div class="project-links">
+                                <a href="https://crystal-cleaners.onrender.com/" class="project-link" target="_blank">Live Site</a>
+                                <a href="https://github.com/iokeke-cos/Tenece_holdings" class="project-link" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-cta">
+                    <p>Interested in working together?</p>
+                    <a href="#all-projects" class="cta-button" id="toggle-projects-btn">View more projects</a>
+                    <a href="#contact" class="cta-button">Let's Talk</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="all-projects" class="projects-section animate-on-scroll">
+            <div class="container">
+                <h2>All Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="https://placehold.co/600x400/2c3e50/f4f7f6?text=Tastybites" alt="Tastybites restaurant web application">
+                        <div class="project-content">
+                            <h3>Tastybites</h3>
+                            <p>A restaurant web application. The backend is built with FastAPI and the frontend with React.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/iokeke-cos/COS_202" class="project-link" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://placehold.co/600x400/2c3e50/f4f7f6?text=Task+Tracker" alt="Task Tracker website">
+                        <div class="project-content">
+                            <h3>Task Tracker</h3>
+                            <p>A task management website built with JavaScript.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/iokeke-cos/COS_202" class="project-link" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://placehold.co/600x400/2c3e50/f4f7f6?text=Crystal+Cleaners" alt="Crystal Cleaners cleaning services website">
+                        <div class="project-content">
+                            <h3>Crystal Cleaners</h3>
+                            <p>A cleaning services website built and deployed with a team. Backend: Node.js and MongoDB. Frontend: React, HTML and CSS. Payments: Paystack.</p>
+                            <div class="project-links">
+                                <a href="https://crystal-cleaners.onrender.com/" class="project-link" target="_blank">Live Site</a>
+                                <a href="https://github.com/iokeke-cos/Tenece_holdings" class="project-link" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://placehold.co/600x400/2c3e50/f4f7f6?text=Python+Calculator" alt="Python calculator">
+                        <div class="project-content">
+                            <h3>Python Calculator</h3>
+                            <p>A simple calculator with basic arithmetic operations, built with Python and Tkinter during my CodSoft internship.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://placehold.co/600x400/2c3e50/f4f7f6?text=Password+Generator" alt="Python password generator">
+                        <div class="project-content">
+                            <h3>Password Generator</h3>
+                            <p>A password generator built with Python during my CodSoft internship.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://placehold.co/600x400/2c3e50/f4f7f6?text=MySQL+Projects" alt="MySQL database projects">
+                        <div class="project-content">
+                            <h3>MySQL Database Projects</h3>
+                            <p>Database-oriented projects built with Python and MySQL during my Platform Innovations summer internship.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-cta">
+                    <p>Interested in working together?</p>
+                    <a href="#contact" class="cta-button">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-videos" class="ai-videos-section animate-on-scroll">
+            <div class="container">
+                <h2>Experience</h2>
+                <p class="section-intro">Internships and professional experience — drag/scroll horizontally to explore.</p>
+                <div class="ai-snap-wrap">
+                    <div class="ai-snap-track" tabindex="0" role="list">
+                        <article class="ai-card">
+                            <div class="ai-caption">
+                                <h3>Information Technology Intern</h3>
+                                <p>MTN Nigeria Communications Plc<br>June 2026 – August 2026</p>
+                            </div>
+                        </article>
+                        <article class="ai-card">
+                            <div class="ai-caption">
+                                <h3>Backend Developer Intern</h3>
+                                <p>Tenece Holdings Limited<br>July 2025 – September 2025<br><br>• Assistant Team Lead of the intern batch.<br>• Team Lead of the Crystal Cleaners project team; led the team through successful website deployment and delivered a project pitch.<br>• Learnt web development with Node.js.</p>
+                            </div>
+                        </article>
+                        <article class="ai-card">
+                            <div class="ai-caption">
+                                <h3>Campus Ambassador</h3>
+                                <p>Cowrywise<br>October 2024 – Present</p>
+                            </div>
+                        </article>
+                        <article class="ai-card">
+                            <div class="ai-caption">
+                                <h3>Summer Intern</h3>
+                                <p>Platform Innovations Ltd<br>August 2024<br><br>• Built MySQL database-oriented projects with Python.</p>
+                            </div>
+                        </article>
+                        <article class="ai-card">
+                            <div class="ai-caption">
+                                <h3>Python Summer Intern</h3>
+                                <p>CodSoft<br>July 2024 – August 2024<br><br>• Built a calculator using Python and Tkinter.<br>• Built a password generator using Python.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="ai-controls" aria-hidden="false">
+                        <button class="ai-nav-btn prev" aria-label="Previous experience"></button>
+                        <div class="ai-pagination" aria-label="Experience pagination"></div>
+                        <button class="ai-nav-btn next" aria-label="Next experience"></button>
+                    </div>
+                </div>
+                <div class="section-cta">
+                    <p>Want to connect?</p>
+                    <a href="#contact" class="cta-button">Let's Talk</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="illustrations" class="illustrations-section animate-on-scroll">
+            <div class="container">
+                <h2>Leadership &amp; Volunteering</h2>
+                <p class="section-intro">Volunteer and leadership experience.</p>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Member, Museum Student Advisory Council</h3>
+                            <p>Yemisi Shyllon Museum of Art</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Student Tour Guide</h3>
+                            <p>Yemisi Shyllon Museum of Art</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Culture and Lifestyle Team Lead</h3>
+                            <p>Asterhall Residency</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-cta">
+                    <p>Like what you see?</p>
+                    <a href="#contact" class="cta-button">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact-section animate-on-scroll">
+            <div class="container">
+                <div class="contact-card">
+                    <div class="contact-image-side">
+                        <img src="images/contact.jpg" alt="Laptop showing code illustration">
+                    </div>
+                    <div class="contact-details-side">
+                        <h2>Get In Touch</h2>
+                        <p>I'm always open to learning and to new opportunities and collaborations. If you'd like to connect, or just want to say hello, feel free to reach out!</p>
+                        <p>Reach out on any of these platforms:</p>
+                        <div class="social-links-std" style="justify-content: flex-start; margin-top: 15px;">
+                            <a href="https://github.com/iokeke-cos" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/ijeamaka-okeke-853119295" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:ijeamaka.okeke@pau.edu.ng" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <a href="#hero" class="back-to-top-btn" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3><span class="notranslate glitch" data-text="Okeke Ijeamaka Grace">Okeke Ijeamaka Grace</span></h3>
+            <p>Software Engineering Student</p>
+            <div class="footer-social">
+                <a href="https://github.com/iokeke-cos" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/ijeamaka-okeke-853119295" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:ijeamaka.okeke@pau.edu.ng" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="footer-nav">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#ai-videos">Experience</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Okeke Ijeamaka Grace. You made it to the bottom. Let's talk!</p>
+        </div>
+    </footer>
+    
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+              pageLanguage: 'en',
+              layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+          }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    
+    <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog" aria-label="Image preview">
+        <button class="lightbox-close" aria-label="Close image">&times;</button>
+        <img class="lightbox-img" src="" alt="Preview image">
+    </div>
+
+</body>
+</html>

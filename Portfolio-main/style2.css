@@ -1,0 +1,313 @@
+/*
+========================================
+SETUP: Reset, Fonts, and Variables
+========================================
+*/
+
+/* --- CSS Reset for Layout Stability --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Google Fonts (Fira Code added) --- */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat:wght@400;600;700&family=Nunito:wght@300;400&display=swap');
+
+/* --- Color & Font Variables --- */
+:root {
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Nunito', sans-serif;
+    --font-code: 'Fira Code', monospace;
+    --primary-purple: #8a2be2;
+    --hover-purple: #9b5ae7;
+    --primary-purple-rgb: 138, 43, 226;
+    --bg-dark: #0a192f;
+    --text-light-heading-dark: #ccd6f6;
+    --card-bg-dark: #112240;
+    --border-color-dark: #233554;
+}
+
+/* --- General Body Styling --- */
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-dark);
+    color: var(--text-light-heading-dark);
+    overflow-x: hidden;
+}
+
+/*
+========================================
+INITIAL EXPERIENCE: Welcome Gate & Modals
+========================================
+*/
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    backdrop-filter: blur(5px);
+}
+
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--card-bg-dark);
+    padding: 30px 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color-dark);
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transform: scale(0.9);
+    transition: transform 0.4s ease;
+}
+
+.modal-overlay.visible .modal-content {
+    transform: scale(1);
+}
+
+.modal-content p {
+    font-family: var(--font-heading);
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.modal-choices {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.modal-choices button {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-purple);
+    background-color: transparent;
+    color: var(--primary-purple);
+}
+
+.modal-choices button:hover {
+    background-color: var(--primary-purple);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+#welcome-gate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('images/bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+
+.welcome-content {
+    text-align: center;
+}
+
+.welcome-title-line {
+    font-family: var(--font-code);
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    color: #fff;
+    min-height: 1.2em;
+}
+
+.scramble-char {
+    color: var(--primary-purple);
+}
+
+.final-message {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s, visibility 0s 0.9s;
+}
+
+.final-message.visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s, visibility 0s 0s;
+}
+
+.final-message p {
+    font-size: 1.1em;
+    margin-bottom: 2em;
+    opacity: 0.8;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.choices a {
+    font-family: var(--font-heading);
+    font-size: 1em;
+    font-weight: 600;
+    padding: 12px 25px;
+    min-width: 220px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-purple);
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+}
+
+#standard-view-btn {
+    background-color: var(--primary-purple);
+    color: #fff;
+}
+
+#standard-view-btn:hover {
+    background-color: var(--hover-purple);
+    border-color: var(--hover-purple);
+    transform: translateY(-3px);
+}
+
+#tech-view-btn {
+    background-color: transparent;
+    color: var(--primary-purple);
+}
+
+#tech-view-btn:hover {
+    background-color: rgba(var(--primary-purple-rgb), 0.1);
+    border-color: var(--hover-purple);
+    transform: translateY(-3px);
+}
+
+
+/*
+========================================
+GLOBAL UI: Page Controls & Translate Widget
+========================================
+*/
+
+body > .skiptranslate {
+    display: none !important;
+}
+body {
+    top: 0 !important;
+}
+
+.page-controls-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2000;
+    display: flex;
+    gap: 10px;
+}
+
+
+
+.control-btn {
+    background-color: var(--card-bg-dark);
+    border: 1px solid var(--border-color-dark);
+    color: var(--text-light-heading-dark);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    background-color: var(--primary-purple);
+    color: #fff;
+}
+
+
+/*
+========================================
+MUSIC CONTROLS & RESPONSIVE DESIGN
+========================================
+*/
+
+#music-controls {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 2001;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+    transition: all 0.4s ease;
+}
+
+#music-controls.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+#music-controls .control-btn {
+    background-color: rgba(17, 34, 64, 0.7);
+    border: 1px solid var(--border-color-dark);
+    backdrop-filter: blur(5px);
+}
+
+#music-controls .control-btn:hover {
+    background-color: var(--primary-purple);
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .welcome-title-line {
+        font-size: 1.5em;
+    }
+    .final-message p {
+        font-size: 1em;
+    }
+    .choices {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .choices a {
+        width: 100%;
+        max-width: 300px;
+        min-width: unset;
+    }
+    .page-controls-container {
+        top: 15px;
+        right: 15px;
+    }
+    .language-dropdown {
+        max-width: calc(100vw - 30px);
+    }
+}
